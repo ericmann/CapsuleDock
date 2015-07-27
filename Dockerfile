@@ -11,10 +11,10 @@ RUN curl -o capsule.zip -SL http://downloads.sourceforge.net/project/wp-capsule/
 	&& chown -R www-data:www-data /usr/src/wordpress/wp-content/themes/capsule
 
 # Upstream install of WordPress SEO
-RUN curl -o wordpress-seo.tar.gz -SL https://github.com/Yoast/wordpress-seo/archive/2.3.2.tar.gz \
-	&& tar -xzf wordpress-seo.tar.gz -C /usr/src/wordpress/wp-content/plugins \
-	&& rm wordpress-seo.tar.gz \
-	&& chown -R www-data:www-data /usr/src/wordpress/wp-content/plugins/wordpress-seo-2.3.2
+RUN curl -o wordpress-seo.zip -SL https://downloads.wordpress.org/plugin/wordpress-seo.2.3.2.zip \
+	&& unzip wordpress-seo.zip -C /usr/src/wordpress/wp-content/plugins \
+	&& rm wordpress-seo.zip \
+	&& chown -R www-data:www-data /usr/src/wordpress/wp-content/plugins/wordpress-seo
 
 # Upstream install of S3-Uploads
 RUN curl -o s3-uploads.tar.gz -SL https://github.com/humanmade/S3-Uploads/archive/v0.9.0.tar.gz \
