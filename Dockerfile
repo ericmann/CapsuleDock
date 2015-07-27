@@ -1,7 +1,7 @@
 FROM wordpress:latest
 
 # Sadly, we need to use unzip
-RUN apt-get update && apt-get install -y unzip --no-install-recommends
+RUN apt-get update && apt-get install -y unzip --no-install-recommends \
 	&& rm -r /var/lib/apt/lists/*
 
 # Upstream install of Capsule as a theme
