@@ -14,7 +14,7 @@ RUN curl -o capsule.zip -SL http://downloads.sourceforge.net/project/wp-capsule/
 
 # Upstream install of WordPress SEO
 RUN curl -o wordpress-seo.zip -SL https://downloads.wordpress.org/plugin/wordpress-seo.2.3.2.zip \
-	&& unzip wordpress-seo.zip -C /usr/src/wordpress/wp-content/plugins \
+	&& unzip wordpress-seo.zip -d /usr/src/wordpress/wp-content/plugins \
 	&& rm wordpress-seo.zip \
 	&& chown -R www-data:www-data /usr/src/wordpress/wp-content/plugins/wordpress-seo
 
