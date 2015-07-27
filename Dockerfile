@@ -1,5 +1,7 @@
 FROM wordpress:latest
 
+MAINTAINER eric@eamann.com
+
 # Sadly, we need to use unzip
 RUN apt-get update && apt-get install -y unzip --no-install-recommends \
 	&& rm -r /var/lib/apt/lists/*
